@@ -3,9 +3,8 @@ const customError=require('../errors')
 
 
 const response = async(req,res)=>{
-    const {numberOne,numberTwo} = req.body;
-    console.log(numberOne,numberTwo); 
-    res.json({ numberOne, numberTwo})
-}
+    let {numberOne,numberTwo} = req.body;
+     res.json({numberOne , numberTwo})
+  }
 
 module.exports = {response}

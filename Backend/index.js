@@ -5,7 +5,7 @@ require("express-async-errors");
 //express
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 5000;
 
 
 //database(mongoDB)
@@ -17,11 +17,12 @@ const responseRouter = require('./routes/responseRoute')
 
 //other
 const morgan = require('morgan')
+const cors = require("cors");
 
 const notFoundMiddleware = require('./middleware/not-found')
 
 
-//bodyParse middleware
+app.use(cors())
 app.use(express.json())
 app.use(morgan('tiny'))
 
