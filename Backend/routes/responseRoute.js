@@ -1,9 +1,9 @@
 const express = require('express')
 const router=express.Router()
-const {response}=require('../controllers/responseController')
+const {addition}=require('../controllers/responseController')
 
 
-router.route('/response').get(response)
+router.route('/addition').get(addition)
 
 
 

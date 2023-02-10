@@ -22,15 +22,16 @@ const cors = require("cors");
 const notFoundMiddleware = require('./middleware/not-found')
 
 
-app.use(cors())
+
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(cors())
 
 
-app.use('/api/v1',responseRouter)
+app.use('/api/v1/response',responseRouter)
 
 app.get('/',(req,res)=>{
-    res.send("project is on")
+    res.send("project is ss  on")
 })
 
 
