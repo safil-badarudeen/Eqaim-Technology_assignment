@@ -11,8 +11,9 @@ const port = 3000;
 //database(mongoDB)
 const {dbConnection} = require('./db/db')
 
-//router
 
+//route
+const responseRouter = require('./routes/responseRoute')
 
 //other
 const morgan = require('morgan')
@@ -22,10 +23,10 @@ const notFoundMiddleware = require('./middleware/not-found')
 
 //bodyParse middleware
 app.use(express.json())
-
 app.use(morgan('tiny'))
 
 
+app.use('/api/v1',responseRouter)
 
 app.get('/',(req,res)=>{
     res.send("project is on")
