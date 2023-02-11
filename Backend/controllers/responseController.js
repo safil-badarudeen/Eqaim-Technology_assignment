@@ -33,8 +33,9 @@ const addition = async (req, res) => {
           sum = sum - 10;
         } else {
           carry = 0;
-          carryString = "_" + carryString;
+          carryString = "0" + carryString;
         }
+        
 
         sumString = sum.toString() + sumString;
         result[`step${step}`] = {
@@ -54,7 +55,7 @@ const addition = async (req, res) => {
         sumString: sumString,
       };
 
-      console.log("just before", result);
+     
       res.status(StatusCodes.OK).json({ result });
     }
   } catch (err) {
